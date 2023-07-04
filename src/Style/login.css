@@ -1,0 +1,30 @@
+.login-container {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    background-color: rgb(44 129 151);
+    border-radius: 15px;
+    color: whitesmoke;
+}
+
+.register-field-item {
+    margin: 20px 2px;
+}
+
+.register-field-item>label {
+    display: flex;
+    align-items: center;
+}
+
+.register-field-item>input {
+    width: 100%;
+}
+
+.reg-submit-btn {
+    cursor: pointer;
+    color: white;
+    font-weight: bolder;
+    background-color: #a545afdb;
+    border-radius: 15px;
+    border: none;
+    padding: 2px 0;
+}

@@ -1,0 +1,39 @@
+.stat-item {
+    width: 80%;
+    height: 180px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    box-sizing: border-box;
+    color: #662936;
+}
+
+.stat-item span{
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.stat-item:hover {
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.312);
+}
+
+#stat-box-1 {
+    background-color: #c8b7a6;
+}
+#stat-box-2 {
+    background-color: #75c9b7;
+}
+#stat-box-3 {
+    background-color: #c29591;
+}
+#stat-box-4 {
+    background-color: #b6c199;
+}

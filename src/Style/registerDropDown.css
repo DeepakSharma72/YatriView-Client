@@ -1,0 +1,26 @@
+.register-menu{
+    position: absolute;
+    right: 2px;
+    top: 60px;
+    width: 160px;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.register-menu>ul{
+    box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.212), -4px -4px 3px rgba(0, 0, 0, 0.212);
+    list-style: none;
+    background-color: aliceblue;
+    color: black;
+    padding-left: 0  !important;
+}
+
+.register-menu>ul>li>div{
+    display: flex;
+    padding: 8px;
+    align-items: center;
+}
+
+.register-menu>ul>li:hover{
+    background-color: rgba(184, 178, 178, 0.225);
+}

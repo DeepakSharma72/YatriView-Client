@@ -1,0 +1,70 @@
+.contant-info-section {
+    margin: 0 15px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.contant-info-section>div {
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+.contact-links>div {
+    margin: 20px 0;
+}
+
+.contact-links>div>i {
+    font-size: larger;
+    border: 2px dotted white;
+    padding: 8px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.contact-form-section {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+}
+
+.form-section>div {
+    margin: 10px 0;
+}
+
+.form-section>div>input,
+.form-section>div>textarea {
+    width: 97%;
+    padding: 2px;
+}
+
+.form-section>div>div>input {
+    padding: 2px;
+    width: 94%;
+}
+
+.form-section>div>div>input,
+.form-section>div>input,
+.form-section>div>textarea {
+    border: 1px solid lightgray;
+}
+
+.form-section>div>div>input:focus,
+.form-section>div>input:focus,
+.form-section>div>textarea:focus,.form-section>div>button:focus{
+    border: 2px solid skyblue;
+    outline: none;
+} 
+
+.form-section>div>button {
+    padding: 5px 15px;
+    font-weight: bolder;
+    background-color: rgb(44 129 151);
+    color: white;
+    cursor: pointer;
+    border: none;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.415);
+}
+
+@media only screen and (max-width: 750px) {
+    .form-section>div>div>input {
+        width: 97%;
+    }
+}

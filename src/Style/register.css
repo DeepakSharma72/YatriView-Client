@@ -1,0 +1,48 @@
+.register-section {
+    background-image: url('./../../public/assets/writebg.jpg');
+    width: 100%;
+    background-size: cover;
+    /* min-height: 90vh; */
+}
+
+.register-inner-section {
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.288);
+    border-style: dotted;
+    border-color: #004e92;
+    border-radius: 20px;
+    height: fit-content;
+}
+
+.register-btn-section {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.register-item {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+    font-size: 18px;
+    cursor: pointer;
+    /* background-color: #50cfe0; */
+    background-color: rgb(44 129 151);
+    padding: 8px 20px;
+    border-radius: 20px;
+}
+
+.register-btn-active {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+    font-size: 18px;
+    /* transform: scale(1.1); */
+    cursor: pointer;
+    background-color: #9148a6;
+    box-shadow: 2px 2px 5px #004e92;
+    border: 2px dashed white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    color: white;
+    font-style: italic;
+}

@@ -1,0 +1,33 @@
+.about-sub-heading {
+    font-weight: bold;
+    text-align: justify;
+    color: #3c3c7e;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.301);
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes iconRotation{
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.heading-icon{
+    transform-origin: center;
+    animation: iconRotation 3s ease-in-out 0s infinite;
+}
+
+.about-para{
+    text-align: justify;
+    font-size: 18px;
+    font-family: serif;
+}
+
+.developer-photo{
+    border-radius: 40px;
+}

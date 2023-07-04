@@ -1,0 +1,80 @@
+.nav-item:hover {
+    text-decoration: none;
+    color: rgba(184, 178, 178, 0.825);
+}
+
+.nav-item{
+    color: aliceblue;
+    transition: all 0.3s;
+}
+
+.topbar-section {
+    padding: 10px;
+    padding-top: 20px;
+    background-color: #155b6e;
+    /* background-image: linear-gradient(#000428 , #004e92); */
+    font-family: 'Josefin Sans', sans-serif;
+    color: white;
+}
+
+.topbar-center-section>div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+    font-weight: bolder;
+}
+.nav-right-section{
+    cursor: pointer;
+}
+
+.search-section{
+    text-align: end;
+    position: relative;
+}
+
+.search-section>input{
+    border: none;
+    width: 100%;
+    padding: 4px;
+    padding-bottom: 2px;
+    font-size: 18px;
+    border-bottom: 2px solid whitesmoke;
+    background-color: white;
+    background-color: white;
+    z-index: 2;
+}
+
+
+.search-section>input:focus{
+    outline: none;
+}
+
+.search-section>button{
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    position: absolute;
+    right: 15px;
+    top: 4px;
+    background-color: white;
+    border: none;
+    font-weight: bold;
+    color: rgb(85, 85, 85);
+}
+
+.search-section>button:focus{
+    border: none;
+    outline: none;
+}
+
+.search-section>button>svg{
+    font-size: 30px;
+}
+
+.search-section>button>svg:hover{
+    color: blue;
+    cursor: pointer;
+}
+
+

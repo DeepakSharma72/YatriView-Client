@@ -1,0 +1,124 @@
+.write-inner-container {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.write-inner-container>h4 {
+    font-weight: bold;
+    text-align: justify;
+    color: #3c3c7e;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.301);
+    margin-bottom: 15px;
+}
+
+#file-upload-inp {
+    display: none;
+}
+
+.blog-img-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-img-container>img {
+    width: 100%;
+    margin: auto;
+}
+
+.blog-img-container>label {
+    cursor: pointer;
+    color: gray;
+}
+
+.blog-heading>input {
+    font-size: 25px;
+    font-weight: 700;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.434);
+}
+
+.blog-heading>input::placeholder,
+.blog-content>textarea::placeholder {
+    color: rgba(128, 128, 128, 0.534);
+    font-weight: bold;
+}
+
+.blog-heading>input:focus {
+    outline: none;
+}
+
+
+.blog-content>textarea {
+    margin-top: 15px;
+    padding: 5px;
+    font-family: 'Lora', serif;
+    width: 100%;
+    height: 300px;
+    border: none;
+    font-size: large;
+    background-color: rgba(220, 220, 220, 0.118);
+    white-space: pre-wrap;
+}
+
+.blog-content>textarea:focus { 
+    outline: none;
+}
+
+.blog-category-container>p{
+    text-align: center;
+    color: grey;
+    margin-top: 15px;
+    font-size: 21px;
+}
+
+.blog-category-inner-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.blog-category-inner-container>span {
+    width: 180px;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 3px 8px;
+    margin: 10px 15px;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.blog-category-inactive {
+    background-color: lightgray;
+}
+
+.blog-category-active {
+    background-color: gray;
+    font-weight: bold;
+}
+
+#cat-del-btn{
+    position: absolute;
+    top: -6px;
+    right: -6px;
+}
+
+#cat-del-btn:hover{
+    color: rgba(255, 0, 0, 0.879);
+}
+
+.publish-blog-btn{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.publish-blog-btn>input{
+    padding: 5px 15px;
+    border: none;
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.237);
+    border-radius: 8px;
+    background-color: green;
+    color: wheat;
+    cursor: pointer;
+}
