@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import '../Style/profile.css';
 import Person4Icon from '@mui/icons-material/Person4';
 import LeaderboardIcon from '@mui/icons-material/Leaderboard';
@@ -8,8 +8,6 @@ import AlbumComp from './Posts';
 import InfoComp from './UserInfo';
 import StatsComp from './StatsComp';
 import HelpComp from './HelpComp'
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
 import { UserContextProvider, UserContext } from '../ContextAPI/UserContext';
 import { BASEURL } from '../Utility/Config';
 
@@ -23,7 +21,7 @@ function SideBar({ setActiveCom, activeCom }) {
                         formObj.userimage === '' ?
                             <img src='./assets/userlogo.png' alt='userimgpicture'></img>
                             :
-                            <img src={formObj.userimage} alit='userimgpicture'></img>
+                            <img src={formObj.userimage} alt='userimgpicture'></img>
                     }
                 </div>
                 <div onClick={() => setActiveCom(1)} className={activeCom === 1 ? 'sidebar-item bluecolor' : 'sidebar-item whitecolor'}>
@@ -45,29 +43,29 @@ function SideBar({ setActiveCom, activeCom }) {
 
 
 function Profile() {
-    const navigate = useNavigate();
-    useEffect(() => {
-        async function verifyToken() {
-            try {
-                let config = {
-                    headers: {
-                        'Authorization': 'Bearer ' + localStorage.getItem('yatriToken')
-                    }
-                }
-                const res = await axios.post(BASEURL + '/auth', '', config);
-                const resData = await res.data;
-                // console.log('res recieved:', resData);
-                if (resData.success === false) {
-                    navigate('/');
-                }
-            }
-            catch (err) {
-                console.log('yah err h from profile component');
-                navigate('/');
-            }
-        }
-        verifyToken();
-    }, [navigate])
+    // const navigate = useNavigate();
+    // useEffect(() => {
+    //     async function verifyToken() {
+    //         try {
+    //             let config = {
+    //                 headers: {
+    //                     'Authorization': 'Bearer ' + localStorage.getItem('yatriToken')
+    //                 }
+    //             }
+    //             const res = await axios.post(BASEURL + '/auth', '', config);
+    //             const resData = await res.data;
+    //             // console.log('res recieved:', resData);
+    //             if (resData.success === false) {
+    //                 navigate('/');
+    //             }
+    //         }
+    //         catch (err) {
+    //             // console.log('yah err h from profile component');
+    //             navigate('/');
+    //         }
+    //     }
+    //     verifyToken();
+    // }, [navigate])
 
     const [activeCom, setActiveCom] = useState(1);
     return (

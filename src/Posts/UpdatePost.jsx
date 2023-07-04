@@ -23,7 +23,7 @@ function WritePost() {
         async function fetchBlogDetail() {
             try {
                 const res = await axios.get(BASEURL + '/updatepost/' + postid, config);
-                console.log(res.data);
+                // console.log(res.data);
                 if(res.data.success === false)
                 {
                     ActiveSnackBar(res.data.serverMsg, 'error');
@@ -42,28 +42,28 @@ function WritePost() {
         }
         fetchBlogDetail();
     }, []);
-    useEffect(() => {
-        async function verifyToken() {
-            try {
-                let config = {
-                    headers: {
-                        'Authorization': 'Bearer ' + localStorage.getItem('yatriToken')
-                    }
-                }
-                const res = await axios.post(BASEURL+'/auth', '', config);
-                const resData = await res.data;
-                // console.log('res recieved:', resData);
-                if (resData.success === false) {
-                    navigate('/');
-                }
-            }
-            catch (err) {
-                // console.log('yah err h');
-                navigate('/');
-            }
-        }
-        verifyToken();
-    }, [navigate])
+    // useEffect(() => {
+    //     async function verifyToken() {
+    //         try {
+    //             let config = {
+    //                 headers: {
+    //                     'Authorization': 'Bearer ' + localStorage.getItem('yatriToken')
+    //                 }
+    //             }
+    //             const res = await axios.post(BASEURL+'/auth', '', config);
+    //             const resData = await res.data;
+    //             // console.log('res recieved:', resData);
+    //             if (resData.success === false) {
+    //                 navigate('/');
+    //             }
+    //         }
+    //         catch (err) {
+    //             // console.log('yah err h');
+    //             navigate('/');
+    //         }
+    //     }
+    //     verifyToken();
+    // }, [navigate])
 
     const UpdateFormData = (e) => {
         setblogObj({ ...blogObj, [e.target.name]: e.target.value });
@@ -71,14 +71,16 @@ function WritePost() {
 
     const UpdateImage = async (e) => {
         const base64file = await convertToBase64(e.target.files[0]);
-        setblogObj({ ...blogObj, ['BlogImage']: base64file });
+        const BlogImage = 'BlogImage';
+        setblogObj({ ...blogObj, [BlogImage]: base64file });
     }
 
     const updateCategoryStatus = (e, idx, val) => {
         e.stopPropagation()
         let tempArr = [...blogObj.Categories];
         tempArr[idx].cat_active = val;
-        setblogObj({ ...blogObj, ['Categories']: tempArr });
+        const Categories = 'Categories';
+        setblogObj({ ...blogObj, [Categories]: tempArr });
     }
 
     const UpdateBlog = async (e) => {

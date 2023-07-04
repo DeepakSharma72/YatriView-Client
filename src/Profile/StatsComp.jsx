@@ -19,7 +19,7 @@ function StatsComp() {
         }
       }
       const res = await axios.get(BASEURL + '/getblogstats', config);
-      console.log('stats data: ', res.data.data);
+      // console.log('stats data: ', res.data.data);
       setStatsObj(res.data.data);
     }
     fetchStats();

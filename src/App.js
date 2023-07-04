@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Route, Routes} from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import Home from './Components/Home';
 import Register from './Registeration/Register';
 import TopBar from './Components/TopBar';
@@ -16,9 +16,13 @@ import { BASEURL } from "./Utility/Config";
 import Footer from "./Components/Footer";
 import Page404 from "./Components/Page404";
 import { DialogContext } from "./ContextAPI/DialogContext";
- 
-function URLs({activeuser, setActiveUser}) {
-  const {handleClickOpen} = useContext(DialogContext);
+import { SnackBarContext } from "./ContextAPI/SnackBar";
+
+function URLs({ activeuser, setActiveUser }) {
+  const navigate = useNavigate();
+  const { handleClickOpen } = useContext(DialogContext);
+  const { ActiveSnackBar } = useContext(SnackBarContext);
+  const [firsttime, setFirstTime] = useState(true);
 
   useEffect(() => {
     async function verifyToken() {
@@ -34,15 +38,25 @@ function URLs({activeuser, setActiveUser}) {
           setActiveUser(true);
         }
         else {
-          // ActiveSnackBar(resData.serverMsg, 'error');
+          setActiveUser(false);
+          if (resData.serverMsg)
+          {
+            console.log(resData.serverMsg);
+            ActiveSnackBar(resData.serverMsg, 'error');
+          }
+          // navigate('/register');
         }
       }
       catch (err) {
-        handleClickOpen(true);
+        setActiveUser(false);
+        if (firsttime) {
+          setFirstTime(false);
+          handleClickOpen(true);
+        }
       }
     }
     verifyToken();
-  }, [])
+  }, [navigate])
 
   return (
     <>
@@ -52,7 +66,9 @@ function URLs({activeuser, setActiveUser}) {
         {
           activeuser && <Route path='/updatepost/:postid' element={<UpdatePost />}></Route>
         }
-        <Route path='/register' element={<Register />}></Route>
+        {
+          !activeuser && <Route path='/register' element={<Register />}></Route>
+        }
         {
           activeuser && <Route path='/writepost' element={<Write />}></Route>
         }
@@ -62,7 +78,7 @@ function URLs({activeuser, setActiveUser}) {
         <Route path='/about' element={<About />}></Route>
         <Route path='/contact' element={<Contact />}></Route>
         <Route path='/search' element={<Search />}></Route>
-        <Route path='/*' element={<Page404/>}></Route>
+        <Route path='/*' element={<Page404 />}></Route>
       </Routes >
     </>
   )
@@ -73,8 +89,8 @@ function App() {
   return (
     <>
       <TopBar />
-      <URLs activeuser={activeuser} setActiveUser = {setActiveUser}/>
-      <Footer activeuser = {activeuser}/>
+      <URLs activeuser={activeuser} setActiveUser={setActiveUser} />
+      <Footer activeuser={activeuser} />
     </>
 
   );

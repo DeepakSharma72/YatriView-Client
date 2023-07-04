@@ -12,7 +12,7 @@ function TopSection() {
                 <h2>YatriView</h2>
                 <hr />
                 <p>
-                    Welcome to YatriView, your one-stop destination for all travel experiences. Here, travelers from all around the world come together to share their unique journeys and insights, offering a diverse range of perspectives on destinations and cultures. Whether you're an avid traveler or simply a curious reader, YatriView is the perfect place to explore new places, gain inspiration for your next adventure, and connect with fellow travel enthusiasts.
+                    Welcome to YatriView, your one-stop destination for all travel experiences. Here, travelers from all around the world come together to share their unique journeys and insights, offering a diverse range of perspectives on destinations and cultures. Whether you are an avid traveler or simply a curious reader, YatriView is the perfect place to explore new places, gain inspiration for your next adventure, and connect with fellow travel enthusiasts.
                 </p>
             </div>
         </div>

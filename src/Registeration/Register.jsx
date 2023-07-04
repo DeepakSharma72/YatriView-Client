@@ -1,10 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import '../Style/register.css';
 import Login from './Login';
 import Signup from './Signup';
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import { BASEURL } from "../Utility/Config";
 function RegisterBtns({ setActiveBtn, activebtn }) {
     return (
         <>
@@ -17,28 +14,28 @@ function RegisterBtns({ setActiveBtn, activebtn }) {
 }
 
 function Register() {
-    const navigate = useNavigate();
-    useEffect(() => {
-        async function verifyToken() {
-            let config = {
-                headers: {
-                    'Authorization': 'Bearer ' + localStorage.getItem('yatriToken')
-                }
-            }
-            const res = await axios.post(BASEURL + '/auth', '', config);
-            const resData = await res.data;
-            console.log('res recieved from register page:', resData);
-            if(resData.success)
-            {
-                navigate('/');
-            }
-            else
-            {
-                navigate('/register');
-            }
-        }
-        verifyToken();
-    }, [])
+    // const navigate = useNavigate();
+    // useEffect(() => {
+    //     async function verifyToken() {
+    //         let config = {
+    //             headers: {
+    //                 'Authorization': 'Bearer ' + localStorage.getItem('yatriToken')
+    //             }
+    //         }
+    //         const res = await axios.post(BASEURL + '/auth', '', config);
+    //         const resData = await res.data;
+    //         // console.log('res recieved from register page:', resData);
+    //         if(resData.success)
+    //         {
+    //             navigate('/');
+    //         }
+    //         else
+    //         {
+    //             navigate('/register');
+    //         }
+    //     }
+    //     verifyToken();
+    // }, [])
 
 
     const [activebtn, setActiveBtn] = useState(0);

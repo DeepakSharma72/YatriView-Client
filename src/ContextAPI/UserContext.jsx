@@ -18,7 +18,7 @@ export function UserContextProvider(props) {
                 }
             }
             const res = await axios.get(BASEURL + '/getprofile', config);
-            console.log('data to display: ', res.data);
+            // console.log('data to display: ', res.data);
             const resData = await res.data.userData;
             return resData
         }
@@ -63,13 +63,13 @@ export function UserContextProvider(props) {
     }
 
     const updateImageField = async (e) => {
-        console.log(e.target.files[0]);
+        // console.log(e.target.files[0]);
         const filedata = await conver2Base64(e.target.files[0]);
         setFormObj({ ...formObj, 'userimage': filedata });
     }
 
     const updateTextFields = (e) => {
-        console.log(e.target.name);
+        // console.log(e.target.name);
         setFormObj({ ...formObj, [e.target.name]: e.target.value });
     }
 

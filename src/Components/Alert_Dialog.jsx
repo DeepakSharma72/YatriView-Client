@@ -34,7 +34,7 @@ export default function AlertDialog() {
               Since the database for our website is not hosted and is only available on localhost. As a result, you will only be able to access the static content. For a comprehensive demonstration of the website's full functionality, please refer to the accompanying video.
             </div>
             <div className='video-section'> 
-              <iframe className='demo-video' src="https://www.youtube.com/embed/bYk94_i5abcN4M" title="Demonstration Video" frameborder="2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen"></iframe>
+              <iframe className='demo-video' src="https://www.youtube.com/embed/bYk94_i5abcN4M" title="Demonstration Video" frameBorder="2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen="allowfullscreen"></iframe>
             </div>
           </DialogContentText>
         </DialogContent>

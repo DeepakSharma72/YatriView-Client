@@ -44,7 +44,7 @@ function AuthorSection() {
                 }
             }
             const res = await axios.delete(BASEURL + '/deletepost/', config);
-            console.log(res);
+            // console.log(res);
             if (res.data.success === true) {
                 ActiveSnackBar(res.data.serverMsg, 'success');
             }
@@ -95,7 +95,7 @@ function Post() {
         let ReadTimer = setInterval(async () => {
             // api call to increment the readTime
             try {
-                const response = await axios.patch(BASEURL + '/updateReadTime', { postid });
+                await axios.patch(BASEURL + '/updateReadTime', { postid });
             }
             catch (err) {
                 console.log('unable to upadate read time');
@@ -104,7 +104,7 @@ function Post() {
         return () => {
             clearInterval(ReadTimer);
         };
-    }, [navigate]);
+    }, [navigate, postid]);
 
 
     useEffect(() => {
@@ -116,6 +116,7 @@ function Post() {
                     }
                 }
                 const postData = await axios.get(BASEURL + '/getpost/' + postid, config);
+                // console.log(postData);
                 // active user
                 if (postData.data.success === false) {
                     ActiveSnackBar(postData.data.serverMsg, 'error');
@@ -137,21 +138,21 @@ function Post() {
             }
         }
         verifyToken();
-    }, [navigate])
+    }, [navigate, postid])
 
 
 
     useEffect(() => {
         async function updateViews() {
             try {
-                const res = await axios.patch(BASEURL + '/updateviews', { postid });
+                await axios.patch(BASEURL + '/updateviews', { postid });
             }
             catch (err) {
                 // console.log('eror in views: ',err);
             }
         }
         updateViews();
-    }, [])
+    }, [postid])
 
 
     return (

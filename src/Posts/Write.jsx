@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useState, useContext } from "react";
 import '../Style/write.css';
 import ControlPointIcon from '@mui/icons-material/ControlPoint';
 import convertToBase64 from '../Utility/Base64Converter';
@@ -12,29 +12,29 @@ import { BASEURL } from "../Utility/Config";
 function WritePost() {
     const { ActiveSnackBar } = useContext(SnackBarContext);
     const navigate = useNavigate();
-    useEffect(() => {
-        async function verifyToken() {
-            try {
-                let config = {
-                    headers: {
-                        'Authorization': 'Bearer ' + localStorage.getItem('yatriToken')
-                    }
-                }
-                const res = await axios.post(BASEURL + '/auth', '', config);
-                const resData = await res.data;
-                // console.log('res recieved:', resData);
-                if (resData.success === false) {
-                    ActiveSnackBar(resData.serverMsg, 'error');
-                    navigate('/');
-                }
-            }
-            catch(err){
-                ActiveSnackBar('Unknown error', 'error');
-                navigate('/');
-            }
-        }
-        verifyToken();
-    }, [navigate])
+    // useEffect(() => {
+    //     async function verifyToken() {
+    //         try {
+    //             let config = {
+    //                 headers: {
+    //                     'Authorization': 'Bearer ' + localStorage.getItem('yatriToken')
+    //                 }
+    //             }
+    //             const res = await axios.post(BASEURL + '/auth', '', config);
+    //             const resData = await res.data;
+    //             // console.log('res recieved:', resData);
+    //             if (resData.success === false) {
+    //                 ActiveSnackBar(resData.serverMsg, 'error');
+    //                 navigate('/');
+    //             }
+    //         }
+    //         catch(err){
+    //             ActiveSnackBar('Unknown error', 'error');
+    //             navigate('/');
+    //         }
+    //     }
+    //     verifyToken();
+    // }, [navigate])
 
     const [formObj, setFormObj] = useState({ uploadImg: '', blogHeading: '', blogCategories: [
         { cat_active: false, cat_name: 'Beach' },
@@ -54,14 +54,16 @@ function WritePost() {
 
     const UpdateImage = async (e) => {
         const base64file = await convertToBase64(e.target.files[0]);
-        setFormObj({ ...formObj, ['uploadImg']: base64file });
+        const uploadImg = 'uploadImg';
+        setFormObj({ ...formObj, [uploadImg]: base64file });
     }
 
     const updateCategoryStatus = (e, idx, val) => {
         e.stopPropagation()
         let tempArr = [...formObj.blogCategories];
         tempArr[idx].cat_active = val;
-        setFormObj({...formObj, ['blogCategories']: tempArr});
+        const blogCategories = 'blogCategories';
+        setFormObj({...formObj, [blogCategories]: tempArr});
     }
 
     const PostBlog = async (e) => {
@@ -77,7 +79,7 @@ function WritePost() {
                 }
             }
             const res = await axios.post(BASEURL + '/postblog', formObj, config);
-            console.log('posted: ', res.data);
+            // console.log('posted: ', res.data);
             if(res.data.success === false)
             {
                 ActiveSnackBar(res.data.serverMsg, 'error');

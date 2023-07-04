@@ -81,7 +81,7 @@ function TopBar() {
             }
             const res = await axios.post(BASEURL + '/auth', '', config);
             const resData = await res.data;
-            console.log('res recieved:', resData);
+            // console.log('res recieved:', resData);
             if (resData.success) {
                 setUser(true);
             }

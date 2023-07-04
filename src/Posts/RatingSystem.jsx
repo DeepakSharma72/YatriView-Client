@@ -21,7 +21,7 @@ function RatingSystem({ postid }) {
                     }
                 }
                 const res = await axios.get(BASEURL + `/getRating/?postid=${postid}`, config);
-                console.log('rating response: ', res);
+                // console.log('rating response: ', res);
                 if (res.data.success) {
                     if (!res.data.rating) {
                         setSubmit(false);
@@ -41,11 +41,10 @@ function RatingSystem({ postid }) {
                 }
             }
             catch(err){
-
             }
         }
         fetchRating();
-    }, [navigate, submitted])
+    }, [navigate, submitted,  postid])
 
 
 
@@ -90,7 +89,7 @@ function RatingSystem({ postid }) {
                 ActiveSnackBar(res.data.ServerMsg, 'error');
                 return;
             }
-            console.log( 'rated the blog: ',res);
+            // console.log( 'rated the blog: ',res);
             setSubmit(true);
         }
         catch (err) {

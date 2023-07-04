@@ -10,7 +10,7 @@ export default function Search() {
     useEffect(() => {
         if (searchItem === '') {
             setSearchStatus(false);
-        }
+        }   
     }, [searchItem])
     useEffect(() => {
         if (searchStatus === false) {

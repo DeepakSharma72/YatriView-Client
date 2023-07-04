@@ -18,7 +18,7 @@ function RecommendedPost({ obj }) {
                     </br>
                     <div className="content-highlighter">
                         <div>
-                            {obj.Rating} <span><StarIcon /></span>
+                            {Math.round(obj.Rating)} <span><StarIcon /></span>
                         </div>
                         <div>
                             {obj.Views} <span><VisibilityIcon /></span>
@@ -40,12 +40,12 @@ function RecommendedPosts({ postid }) {
         async function fetchRecommendedPosts() {
             const resData = await axios.get(BASEURL + '/recommend/' + postid);
             if (resData.data.success === true) {
-                console.log(resData.data.data);
+                // console.log(resData.data.data);
                 setRecPosts(resData.data.data);
             }
         }
         fetchRecommendedPosts();
-    }, []);
+    }, [navigate]);
 
     const handleClick = (id) => {
         const url = '/posts/' + id;
