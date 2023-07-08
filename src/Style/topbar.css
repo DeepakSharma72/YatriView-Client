@@ -4,6 +4,7 @@
 }
 
 .nav-item{
+    font-size: 16px;
     color: aliceblue;
     transition: all 0.3s;
 }

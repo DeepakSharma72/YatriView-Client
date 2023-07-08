@@ -18,7 +18,7 @@ function SideBar({ setActiveCom, activeCom }) {
             <div className='sidebar'>
                 <div className='prof-img-cont mt-3'>
                     {
-                        formObj.userimage === '' ?
+                        !formObj.userimage ?
                             <img src='./assets/userlogo.png' alt='userimgpicture'></img>
                             :
                             <img src={formObj.userimage} alt='userimgpicture'></img>
@@ -76,7 +76,7 @@ function Profile() {
                     <div className='mainbar'>
                         {activeCom === 1 && <InfoComp />}
                         {activeCom === 2 && <StatsComp />}
-                        {activeCom === 3 && <AlbumComp URL = {BASEURL + '/getauthorsblogs'}/>}
+                        {activeCom === 3 && <AlbumComp URL={BASEURL + '/getauthorsblogs'} />}
                         {activeCom === 4 && <HelpComp />}
                     </div>
                 </div>

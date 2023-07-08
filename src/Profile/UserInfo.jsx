@@ -15,7 +15,7 @@ const DisplayInfo = () => {
     <div className='row mt-3'>
       <div className='col-lg-6 col-md-7 col-sm-8 col-11 mx-auto userinfo-sec'>
         <div className='prof-img-item col-md-6 col-8 mx-auto my-3'>
-          <img src={formObj.userimage === "" ? './assets/userlogo.png' : formObj.userimage} alt='userimg' />
+          <img src={!formObj.userimage  ? './assets/userlogo.png' : formObj.userimage} alt='userimg' />
         </div>
         <form onSubmit={DisableUpdateInfo}>
           <div className='info-item'>

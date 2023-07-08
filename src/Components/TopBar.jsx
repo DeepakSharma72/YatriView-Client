@@ -26,11 +26,11 @@ const LeftMenu = ({ ww, MenuVis }) => {
 
 const Menu = ({ user }) => {
     return (
-        <div className="row">
-            <div className="nav-center-item col-lg-3 col-6"><NavLink className='nav-item' style={{ textDecoration: 'none' }} to='/'>HOME</NavLink></div>
-            <div className="nav-center-item col-lg-3 col-6"><NavLink className="nav-item" style={{ textDecoration: 'none' }} to='/about'>ABOUT</NavLink></div>
-            <div className="nav-center-item col-lg-3 col-6"><NavLink className="nav-item" style={{ textDecoration: 'none' }} to='/contact'>CONTACT</NavLink></div>
-            {user && <div className="nav-center-item col-lg-3 col-6"><NavLink className="nav-item" style={{ textDecoration: 'none' }} to='/writepost'>WRITE</NavLink></div>}
+        <div className="row mt-2 mb-md-0">
+            <div className="nav-center-item col-md-3 col-12"><NavLink className='nav-item' style={{ textDecoration: 'none' }} to='/'>HOME</NavLink></div>
+            <div className="nav-center-item col-md-3 col-12"><NavLink className="nav-item" style={{ textDecoration: 'none' }} to='/about'>ABOUT</NavLink></div>
+            <div className="nav-center-item col-md-3 col-12"><NavLink className="nav-item" style={{ textDecoration: 'none' }} to='/contact'>CONTACT</NavLink></div>
+            {user && <div className="nav-center-item col-md-3 col-12"><NavLink className="nav-item" style={{ textDecoration: 'none' }} to='/writepost'>WRITE</NavLink></div>}
         </div>
     )
 }
