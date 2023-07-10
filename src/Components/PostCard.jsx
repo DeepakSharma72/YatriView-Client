@@ -15,8 +15,8 @@ function PostCard({ blog }) {
     return (
         <div className="col-12 col-sm-6 col-md-4 col-lg-3">
             <div className="row album-inner-section">
-                <div className="col-12 col-sm-11 mx-auto post-card" style={{height: '480px'}}>
-                    <img src={blog.BlogImage}></img>
+                <div className="col-12 col-sm-11 mx-auto post-card" style={{minHeight: '480px'}}>
+                    <img src={blog.BlogImage} alt = 'blog-view'></img>
                     <div className="post-card-content">
                         <h5>
                             {blog.Title}

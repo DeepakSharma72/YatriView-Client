@@ -33,6 +33,8 @@
 .prof-img-cont>img {
     width: 90%;
     border-radius: 50%;
+    max-height: 220px;
+    object-fit: cover;
 }
 
 .sidebar-item {
