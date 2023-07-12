@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Yatri-View 
+YatriView is a website where people can share their travel experiences by writing blogs. You can read blogs written by other people, rate them, and create your own blogs, Edit and Delete them whenever you want.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Features
+- __Keyword-based search:__  You can search for blogs by keyword. This is a great way to find blogs about specific topics or destinations.
+- __Jaccard similarity-based recommendation system:__ This system recommends blogs to you based on your interests. It does this by calculating the Jaccard similarity between your blog and other blogs. The Jaccard similarity is a measure of how similar two sets are.
+- __Total Read time, views, and rating statistics:__ Each blog has information about Toal read time (a.k.a Read Hours), how many views it has, and what rating it has received. This information can help you decide which blogs to read.
+- __Create, Update and Delete Blogs:__ User can register to the website and get access to functionality such as Create, Update, Delete, Read Blogs.
+- __Rate Blogs:__ User can rate blogs from 1 to 5 stars. This helps other users decide which blogs to read.
+- __User Profile:__ User Profile contains sub-sections like Personal Details, Update Personal Details, Blogs posted by User this allows user to track progress and see what other users have enjoyed and Help Section.
 
-## Available Scripts
+## Technologies Used
+- __Frontend__ : ReactJs, CSS, Boostrap, Matrial UI
+- __Backend__  : ExpressJs, Nodejs
+- __Database__ : MongoDB
 
-In the project directory, you can run:
+## Usefull Links
 
-### `npm start`
+- #### Webiste link : [YatriView](https://yatriview.netlify.app/)
+- #### Demo Video: [Video Demonstration]('https://www.youtube.com/watch?v=1qbCtU1GQ78')
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Getting Start
+1. Clone the Yatri-View Client Repository (Frontend Code)
+```
+    https://github.com/DeepakSharma72/YatriView-Client.git
+```
+2. Clone the Yatri-View Server Repository (Backend Code)
+```
+    https://github.com/DeepakSharma72/YatriView-Server.git
+```
+3. Install node
+4. Open terminal and Navigate to the project directory: `cd YatriView-Server`
+5. Install dependencies
+```
+    npm install
+```
+6. Start the Server
+```
+    npm run start
+```
+7. Open new terminal and Navigate to the project directory: `cd YatriView-Client` 
+8. Repeat Step 5 and 6.
+9. Now, You are good to go. Open the URL in Browser
+```
+    http://localhost:3000
+```
